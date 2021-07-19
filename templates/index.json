@@ -26,6 +26,7 @@
         "button"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/person-silhouetted-on-a-horse-in-a-open-field.jpg",
         "desktop_text_box_position": "flex-end",
         "color_scheme": "background-1",
         "stack_images_on_mobile": true,
