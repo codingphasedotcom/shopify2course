@@ -5,7 +5,7 @@
       <div class="announce-bar" style="background: {{ block.settings.background_color }}; " aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
         {%- if block.settings.text != blank -%}
           {%- if block.settings.link != blank -%}
-            <a href="{{ block.settings.link }}" style="color: {{ block.settings.announcement_text_color }};">
+            <a href="{{ block.settings.link }}" style="color: {{ block.settings.announcement_text_color }}; text-decoration: none">
           {%- endif -%}
               
                 {{ block.settings.text | escape }}
