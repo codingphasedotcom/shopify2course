@@ -1,17 +1,15 @@
+
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
-      <div class="announcement-bar color-{{ block.settings.color_scheme }}" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+      <div class="announce-bar" style="background: {{ block.settings.background_color }}; color: {{ block.settings.announcement_text_color }}" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
         {%- if block.settings.text != blank -%}
           {%- if block.settings.link != blank -%}
-            <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+            <a href="{{ block.settings.link }}">
           {%- endif -%}
-              <p class="announcement-bar__message h5">
+              
                 {{ block.settings.text | escape }}
-                {%- if block.settings.link != blank -%}
-                  {% render 'icon-arrow' %}
-                {%- endif -%}
-              </p>
+                
           {%- if block.settings.link != blank -%}
             </a>
           {%- endif -%}
@@ -35,33 +33,18 @@
           "default": "Welcome to our store",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
         },
+        
         {
-          "type": "select",
-          "id": "color_scheme",
-          "options": [
-            {
-              "value": "background-1",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__1.label"
-            },
-            {
-              "value": "background-2",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__2.label"
-            },
-            {
-              "value": "inverse",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__3.label"
-            },
-            {
-              "value": "accent-1",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__4.label"
-            },
-            {
-              "value": "accent-2",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.options__5.label"
-            }
-          ],
-          "default": "accent-1",
-          "label": "t:sections.announcement-bar.blocks.announcement.settings.color_scheme.label"
+          "type": "color",
+          "id": "background_color",
+          "label": "Background",
+          "default": "#605e7d"
+        },
+        {
+          "type": "color",
+          "id": "announcement_text_color",
+          "label": "Background",
+          "default": "#FFFFFF"
         },
         {
           "type": "url",
