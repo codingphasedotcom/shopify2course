@@ -1,0 +1,201 @@
+
+
+
+<div class="hero hero1 hero1--aligned-{{ section.settings.info_alignment }} hero1--{{ section.settings.hero_height }}">
+    {%- if section.settings.image != blank -%}
+      <img srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if section.settings.image.width >= 535 -%}{{ section.settings.image | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | img_url: '720x' }} 720w,{%- endif -%}
+        {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | img_url: '940x' }} 940w,{%- endif -%}
+        {%- if section.settings.image.width >= 1070 -%}{{ section.settings.image | img_url: '2000x' }} 2000w{%- endif -%}"
+        src="{{ section.settings.image | img_url: '533x' }}"
+        sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        class="hero1__bg"
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+    {% assign opacity = section.settings.opacity | divided_by: 100.00 %}
+  <div class="hero1__content-container" style="background-color: {{ section.settings.background | color_modify: 'alpha', opacity  }}">
+    <div class="hero1__info">
+      {%- for block in section.blocks -%}
+        {% case block.type %}
+          {%- when 'heading' -%}
+            <h1 class="hero1__title hero1__title--{{- block.settings.title_size -}}">
+             
+              {{ block.settings.title | escape }}</h1>
+          {%- when 'paragraph' -%}
+            <p class="hero1__paragraph">
+              {{ block.settings.paragraph | escape }}
+            </p>
+          {%- when 'button' -%}
+            {%- if block.settings.button_label != blank -%}
+              <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
+                {{ block.settings.button_label | escape }}
+              </a>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <h1>Hero 1</h1>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+	"name": "Hero One",
+	"class": "spaced-section spaced-section--full-width",
+	"settings": [
+    {
+			"type": "select",
+			"id": "hero_height",
+			"options": [{
+					"value": "25vh",
+					"label": "25%"
+				},
+				{
+					"value": "50vh",
+					"label": "50%"
+				},
+				{
+					"value": "75vh",
+					"label": "75%"
+				},
+        {
+					"value": "100vh",
+					"label": "100%"
+				}
+			],
+			"default": "100vh",
+			"label": "Height"
+		},
+    {
+			"type": "image_picker",
+			"id": "image",
+			"label": "t:sections.image-with-text.settings.image.label"
+		},
+		{
+			"type": "color",
+			"id": "background",
+			"label": "Background",
+			"default": "#000000"
+		},
+		{
+			"type": "range",
+			"id": "opacity",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"label": "Opacity",
+			"default": 50
+		},
+		{
+			"type": "select",
+			"id": "info_alignment",
+			"options": [{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "right",
+			"label": "Info Alignment"
+		}
+	],
+	"blocks": [{
+			"type": "heading",
+			"name": "t:sections.image-with-text.blocks.heading.name",
+			"limit": 1,
+			"settings": [{
+				"type": "text",
+				"id": "title",
+				"label": "Title",
+				"default": "Title"
+			},
+      {
+        "type": "select",
+        "id": "title_size",
+        "options": [{
+            "value": "sm",
+            "label": "Small"
+          },
+          {
+            "value": "md",
+            "label": "Medium"
+          },
+          {
+            "value": "lg",
+            "label": "Large"
+          },
+          {
+            "value": "xl",
+            "label": "Extra Large"
+          }
+        ],
+        "default": "md",
+        "label": "Font Size"
+      }
+    ]
+		},
+		{
+			"type": "paragraph",
+			"name": "Paragraph",
+			"limit": 1,
+			"settings": [{
+				"type": "textarea",
+				"id": "paragraph",
+				"label": "Paragraph",
+				"default": "Example message I ' m baby kogi cardigan kitsch hammock banjo. Typewriter viral man braid hot chicken, farm-to-table fashion axe intelligentsia lomo green juice ramps irony succulents."
+			}]
+		},
+		{
+			"type": "button",
+			"name": "t:sections.image-with-text.blocks.button.name",
+			"limit": 1,
+			"settings": [{
+					"type": "text",
+					"id": "button_label",
+					"default": "Button label",
+					"label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+					"info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+				},
+				{
+					"type": "url",
+					"id": "button_link",
+					"label": "Link"
+				}
+			]
+		}
+	],
+	"presets": [{
+		"name": "Hero One",
+		"blocks": [{
+				"type": "heading"
+			},
+			{
+				"type": "paragraph"
+			},
+			{
+				"type": "button"
+			}
+		]
+	}]
+}
+{% endschema %}

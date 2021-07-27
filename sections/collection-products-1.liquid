@@ -1,0 +1,261 @@
+<div class="collection collection1">
+	<div class="container">
+		<div class="row">
+			{%- for product in section.settings.collection.products limit: section.settings.total_products -%}
+			<div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
+				<div class="collection1__collection-item">
+					{% assign opacity = section.settings.opacity | divided_by: 100.00 %}
+					<div class="collection1__product-img collection1__product-img--{{section.settings.container_shape}} collection1__product-img--{{section.settings.image_fit}}" 
+					style="background-color: {{ section.settings.background | color_modify: 'alpha', opacity  }}">
+						<div class="collection1__heart"><i class="far fa-heart"></i></div>
+						{%- if product.images[0] != blank -%}
+						  <a href="{{product.url}}" class="img-link">
+								<img srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0]  | img_url: '165x' }} 165w,{%- endif -%}
+									{%- if product.images[0].width >= 360 -%}{{ product.images[0] | img_url: '360x' }} 360w,{%- endif -%}
+									{%- if product.images[0].width >= 535 -%}{{ product.images[0] | img_url: '535x' }} 535w,{%- endif -%}
+									{%- if product.images[0].width >= 720 -%}{{ product.images[0] | img_url: '720x' }} 720w,{%- endif -%}
+									{%- if product.images[0].width >= 940 -%}{{ product.images[0] | img_url: '940x' }} 940w,{%- endif -%}
+									{%- if product.images[0].width >= 1070 -%}{{ product.images[0] | img_url: '2000x' }} 2000w{%- endif -%}"
+									src="{{ product.images[0] | img_url: '533x' }}"
+									sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+									alt="{{ product.images[0].alt | escape }}"
+									loading="lazy"
+									width="{{ product.images[0].width }}"
+									height="{{ product.images[0].height }}"
+									class="hero1__bg"
+								>
+							</a>
+						{%- else -%}
+							{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+						{%- endif -%}
+					</div>
+					<div class="collection1__product-info">
+						<div class="collection1__product-details">
+							{%- if section.settings.show_title == true -%}
+							<span class="collection1__product-title">
+								{{ product.title }}
+							</span>
+							{%- endif -%}
+							{%- if section.settings.show_price == true -%}
+							<span class="collection1__product-price">
+								${{ product.price }}
+							</span>
+							{%- endif -%}
+						</div>
+
+						<div class="collection1__colors">
+							<div class="collection1__color collection1__color--blue"></div>
+							<div class="collection1__color collection1__color--black"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+
+
+{% schema %}
+{
+	"name": "Collection Products 1",
+	"class": "spaced-section spaced-section--full-width",
+	"settings": [
+
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "Featured collection"
+		},
+		{
+			"type": "range",
+			"id": "total_products",
+			"min": 1,
+			"max": 16,
+			"step": 1,
+			"label": "Total Products",
+			"default": 16
+		},
+		
+		{
+			"type": "select",
+			"id": "container_shape",
+			"options": [{
+					"value": "rectangle",
+					"label": "Rectangle"
+				},
+				{
+					"value": "square",
+					"label": "Square"
+				},
+				{
+					"value": "circle",
+					"label": "Circle"
+				}
+			],
+			"default": "rectangle",
+			"label": "Product Container Shape"
+		},
+		{
+			"type": "select",
+			"id": "image_fit",
+			"options": [{
+					"value": "cover",
+					"label": "Cover"
+				},
+				{
+					"value": "contain",
+					"label": "Contain"
+				}
+			],
+			"default": "cover",
+			"label": "Product Image Fit"
+		},
+		{
+			"type": "color",
+			"id": "background",
+			"label": "Background",
+			"default": "#EDEFF5"
+		},
+		{
+			"type": "range",
+			"id": "opacity",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"label": "Color Opacity",
+			"default": 100
+		},
+		{
+			"type": "checkbox",
+			"id": "show_title",
+			"label": "Show Title",
+			"default": true
+		},
+		{
+			"type": "checkbox",
+			"id": "show_price",
+			"label": "Show Price",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "xxl_col",
+			"options": [{
+					"value": "col-xxl-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-xxl-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-xxl-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-xxl-2",
+					"label": "6 Column"
+				}
+			],
+			"default": "col-xxl-3",
+			"label": "XXL Devices"
+		},
+		{
+			"type": "select",
+			"id": "xl_col",
+			"options": [{
+					"value": "col-xl-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-xl-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-xl-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-xl-2",
+					"label": "6 Column"
+				}
+			],
+			"default": "col-xl-3",
+			"label": "Extra Large Devices"
+		},
+		{
+			"type": "select",
+			"id": "lg_col",
+			"options": [{
+					"value": "col-lg-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-lg-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-lg-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-lg-2",
+					"label": "6 Column"
+				}
+			],
+			"default": "col-lg-3",
+			"label": "Large Devices"
+		},
+		{
+			"type": "select",
+			"id": "md_col",
+			"options": [{
+					"value": "col-md-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-md-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-md-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-md-2",
+					"label": "6 Column"
+				}
+			],
+			"default": "col-md-3",
+			"label": "Medium Devices"
+		},
+		{
+			"type": "select",
+			"id": "sm_col",
+			"options": [{
+					"value": "col-sm-6",
+					"label": "2 Columns"
+				},
+				{
+					"value": "col-sm-4",
+					"label": "3 Columns"
+				},
+				{
+					"value": "col-sm-3",
+					"label": "4 Columns"
+				},
+				{
+					"value": "col-sm-2",
+					"label": "6 Column"
+				}
+			],
+			"default": "col-sm-6",
+			"label": "Small Devices"
+		}
+	],
+	"presets": [{
+		"name": "Collection Products 1"
+	}]
+}
+{% endschema %}

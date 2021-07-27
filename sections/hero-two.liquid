@@ -1,0 +1,165 @@
+<div class="hero hero2 hero2--{{ section.settings.hero_height }}">
+	<div class="hero2__collection1">
+		{%- if section.settings.image1 != blank -%}
+      <img srcset="{%- if section.settings.image1.width >= 165 -%}{{ section.settings.image1 | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if section.settings.image1.width >= 360 -%}{{ section.settings.image1 | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if section.settings.image1.width >= 535 -%}{{ section.settings.image1 | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if section.settings.image1.width >= 720 -%}{{ section.settings.image1 | img_url: '720x' }} 720w,{%- endif -%}
+        {%- if section.settings.image1.width >= 940 -%}{{ section.settings.image1 | img_url: '940x' }} 940w,{%- endif -%}
+        {%- if section.settings.image1.width >= 1070 -%}{{ section.settings.image1 | img_url: '2000x' }} 2000w{%- endif -%}"
+        src="{{ section.settings.image1 | img_url: '533x' }}"
+        sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+        alt="{{ section.settings.image1.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image1.width }}"
+        height="{{ section.settings.image1.height }}"
+        class="hero2__bg"
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+		
+		{% assign opacity1 = section.settings.opacity1 | divided_by: 100.00 %}
+		<div class="hero2__content-container" style="background-color: {{ section.settings.background1 | color_modify: 'alpha', opacity1  }}">
+			{%- if section.settings.button_label1 != blank -%}
+				<a href="{{ section.settings.button_link1 }}" class="hero2__button" {{ section.shopify_attributes }} >
+					{{ section.settings.button_label1 | escape }}
+				</a>
+			{%- endif -%}
+		</div>
+	</div>
+	<div class="hero2__collection2">
+		{%- if section.settings.image2 != blank -%}
+      <img srcset="{%- if section.settings.image2.width >= 165 -%}{{ section.settings.image2 | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if section.settings.image2.width >= 360 -%}{{ section.settings.image2 | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if section.settings.image2.width >= 535 -%}{{ section.settings.image2 | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if section.settings.image2.width >= 720 -%}{{ section.settings.image2 | img_url: '720x' }} 720w,{%- endif -%}
+        {%- if section.settings.image2.width >= 940 -%}{{ section.settings.image2 | img_url: '940x' }} 940w,{%- endif -%}
+        {%- if section.settings.image2.width >= 1070 -%}{{ section.settings.image2 | img_url: '2000x' }} 2000w{%- endif -%}"
+        src="{{ section.settings.image2 | img_url: '533x' }}"
+        sizes="(min-width: 1100px) 2000px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+        alt="{{ section.settings.image2.alt | escape }}"
+        loading="lazy"
+        width="{{ section.settings.image2.width }}"
+        height="{{ section.settings.image2.height }}"
+        class="hero2__bg"
+      >
+    {%- else -%}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+		{% assign opacity2 = section.settings.opacity2 | divided_by: 100.00 %}
+		<div class="hero2__content-container" style="background-color: {{ section.settings.background2 | color_modify: 'alpha', opacity2  }}">
+			<div class="hero2__info">
+				{%- if section.settings.button_label2 != blank -%}
+					<a href="{{ section.settings.button_link2 }}" class="hero2__button" {{ section.shopify_attributes }}>
+						{{ section.settings.button_label2 | escape }}
+					</a>
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% schema %}
+{
+	"name": "Hero Two",
+	"class": "spaced-section spaced-section--full-width",
+	"settings": [
+		{
+			"type": "select",
+			"id": "hero_height",
+			"options": [{
+					"value": "25vh",
+					"label": "25%"
+				},
+				{
+					"value": "50vh",
+					"label": "50%"
+				},
+				{
+					"value": "75vh",
+					"label": "75%"
+				},
+        {
+					"value": "100vh",
+					"label": "100%"
+				}
+			],
+			"default": "100vh",
+			"label": "Height"
+		},
+		{
+			"type": "image_picker",
+			"id": "image1",
+			"label": "t:sections.image-with-text.settings.image.label"
+		},
+		{
+			"type": "color",
+			"id": "background1",
+			"label": "Background",
+			"default": "#000000"
+		},
+		{
+			"type": "range",
+			"id": "opacity1",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"label": "Opacity",
+			"default": 50
+		},
+		{
+			"type": "text",
+			"id": "button_label1",
+			"default": "Button label",
+			"label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+			"info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+		},
+		{
+			"type": "url",
+			"id": "button_link1",
+			"label": "Link"
+		},
+		{
+			"type": "image_picker",
+			"id": "image2",
+			"label": "t:sections.image-with-text.settings.image.label"
+		},
+		{
+			"type": "color",
+			"id": "background2",
+			"label": "Background",
+			"default": "#000000"
+		},
+		{
+			"type": "range",
+			"id": "opacity2",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"label": "Opacity",
+			"default": 50
+		},
+		{
+			"type": "text",
+			"id": "button_label2",
+			"default": "Button label",
+			"label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+			"info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+		},
+		{
+			"type": "url",
+			"id": "button_link2",
+			"label": "Link"
+		}
+	],
+	"presets": [{
+		"name": "Hero Two"
+	}]
+}
+{% endschema %}
