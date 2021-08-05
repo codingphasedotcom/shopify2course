@@ -29,12 +29,14 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "picker_type": "button"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
@@ -46,11 +48,13 @@
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
           }
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
           }
         }
@@ -73,6 +77,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "image_ratio": "adapt",
@@ -81,50 +86,26 @@
         "show_vendor": false
       }
     },
-    "1628193463e120c437": {
-      "type": "collage",
-      "blocks": {
-        "1628193463e120c437-0": {
-          "type": "video",
-          "settings": {
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "description": "Describe the video for customers using screen readers",
-            "image_padding": false
-          }
-        },
-        "1628193463e120c437-1": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "secondary_background": false,
-            "second_image": false,
-            "image_padding": false
-          }
-        },
-        "1628193463e120c437-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_padding": false,
-            "color_scheme": "background-1"
-          }
-        }
-      },
-      "block_order": [
-        "1628193463e120c437-0",
-        "1628193463e120c437-1",
-        "1628193463e120c437-2"
-      ],
+    "162814341961a0317e": {
+      "type": "hero-two",
       "settings": {
-        "heading": "Multimedia collage",
-        "desktop_layout": "left",
-        "mobile_layout": "collage"
+        "hero_height": "50vh",
+        "image1": "shopify:\/\/shop_images\/thick-lush-green-forest.jpg",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Adidas",
+        "button_link1": "shopify:\/\/collections\/adidas",
+        "image2": "shopify:\/\/shop_images\/person-silhouetted-on-a-horse-in-a-open-field.jpg",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Sale",
+        "button_link2": "shopify:\/\/collections\/sale"
       }
     }
   },
   "order": [
     "main",
     "product-recommendations",
-    "1628193463e120c437"
+    "162814341961a0317e"
   ]
 }
