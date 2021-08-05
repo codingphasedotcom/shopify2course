@@ -29,26 +29,32 @@
         },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
+            "picker_type": "button"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
+            "show_dynamic_checkout": true
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
           }
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
           }
         }
@@ -65,16 +71,41 @@
         "share"
       ],
       "settings": {
+        "enable_sticky_info": true,
+        "enable_video_looping": false
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_vendor": false
+      }
+    },
+    "162814341961a0317e": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "50vh",
+        "image1": "shopify:\/\/shop_images\/thick-lush-green-forest.jpg",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Adidas",
+        "button_link1": "shopify:\/\/collections\/adidas",
+        "image2": "shopify:\/\/shop_images\/person-silhouetted-on-a-horse-in-a-open-field.jpg",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Sale",
+        "button_link2": "shopify:\/\/collections\/sale"
       }
     }
   },
   "order": [
     "main",
-    "product-recommendations"
+    "product-recommendations",
+    "162814341961a0317e"
   ]
 }
