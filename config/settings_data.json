@@ -34,7 +34,7 @@
           "newsletter_enable": true,
           "newsletter_heading": "Sign up to our emails",
           "show_social": false,
-          "footer_bottom_menu": ""
+          "footer_bottom_menu": "main-menu"
         }
       }
     },
