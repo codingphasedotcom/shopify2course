@@ -42,7 +42,7 @@
         "1628451172c00fbb03-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "adidas"
           }
         },
         "1628451172c00fbb03-1": {
@@ -97,7 +97,7 @@
         "total_products": 16,
         "container_shape": "rectangle",
         "image_fit": "cover",
-        "background": "#EDEFF5",
+        "background": "#edeff5",
         "opacity": 100,
         "show_title": true,
         "show_price": true,
@@ -143,7 +143,7 @@
         "total_products": 16,
         "container_shape": "rectangle",
         "image_fit": "cover",
-        "background": "#EDEFF5",
+        "background": "#edeff5",
         "opacity": 100,
         "show_title": true,
         "show_price": true,
