@@ -1,36 +1,111 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "1628451142ba22e7a3": {
+      "type": "hero-one",
       "blocks": {
-        "heading": {
+        "1628451142ba22e7a3-0": {
           "type": "heading",
           "settings": {
-            "heading": "Santos Store"
+            "title": "Title",
+            "title_size": "md"
           }
         },
-        "button": {
-          "type": "buttons",
+        "1628451142ba22e7a3-1": {
+          "type": "paragraph",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "paragraph": "Example message I ' m baby kogi cardigan kitsch hammock banjo. Typewriter viral man braid hot chicken, farm-to-table fashion axe intelligentsia lomo green juice ramps irony succulents."
+          }
+        },
+        "1628451142ba22e7a3-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "1628451142ba22e7a3-0",
+        "1628451142ba22e7a3-1",
+        "1628451142ba22e7a3-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/person-silhouetted-on-a-horse-in-a-open-field.jpg",
-        "desktop_text_box_position": "flex-end",
-        "color_scheme": "background-1",
-        "stack_images_on_mobile": true,
-        "adapt_height_first_image": false
+        "hero_height": "100vh",
+        "background": "#000000",
+        "opacity": 50,
+        "info_alignment": "center"
+      }
+    },
+    "1628451172c00fbb03": {
+      "type": "collection-group",
+      "blocks": {
+        "1628451172c00fbb03-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "adidas"
+          }
+        },
+        "1628451172c00fbb03-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "1628451172c00fbb03-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "1628451172c00fbb03-0",
+        "1628451172c00fbb03-1",
+        "1628451172c00fbb03-2"
+      ],
+      "settings": {
+        "container_shape": "square",
+        "image_fit": "contain",
+        "background": "#ffffff",
+        "opacity": 100,
+        "show_title": true,
+        "xxl_col": "col-xxl-4",
+        "xl_col": "col-xl-4",
+        "lg_col": "col-lg-4",
+        "md_col": "col-md-4",
+        "sm_col": "col-sm-2"
+      }
+    },
+    "162845116200ef6b93": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "50vh",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Button label",
+        "button_link1": "",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Button label",
+        "button_link2": ""
+      }
+    },
+    "1628451179281ffef6": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "",
+        "total_products": 16,
+        "container_shape": "rectangle",
+        "image_fit": "cover",
+        "background": "#edeff5",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-3",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-3",
+        "sm_col": "col-sm-6"
       }
     },
     "featured_products": {
@@ -47,22 +122,55 @@
         "show_vendor": false
       }
     },
-    "image_text": {
-      "type": "image-with-text",
+    "16284512103cad8520": {
+      "type": "hero-two",
+      "settings": {
+        "hero_height": "50vh",
+        "background1": "#000000",
+        "opacity1": 50,
+        "button_label1": "Button label",
+        "button_link1": "",
+        "background2": "#000000",
+        "opacity2": 50,
+        "button_label2": "Button label",
+        "button_link2": ""
+      }
+    },
+    "1628451261173d995f": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "",
+        "total_products": 16,
+        "container_shape": "rectangle",
+        "image_fit": "cover",
+        "background": "#edeff5",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-3",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-3",
+        "sm_col": "col-sm-6"
+      }
+    },
+    "16284512746d6f5dbd": {
+      "type": "hero-one",
       "blocks": {
-        "heading": {
+        "16284512746d6f5dbd-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text"
+            "title": "Title",
+            "title_size": "md"
           }
         },
-        "text": {
-          "type": "text",
+        "16284512746d6f5dbd-1": {
+          "type": "paragraph",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "paragraph": "Example message I ' m baby kogi cardigan kitsch hammock banjo. Typewriter viral man braid hot chicken, farm-to-table fashion axe intelligentsia lomo green juice ramps irony succulents."
           }
         },
-        "button": {
+        "16284512746d6f5dbd-2": {
           "type": "button",
           "settings": {
             "button_label": "Button label",
@@ -71,20 +179,26 @@
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "16284512746d6f5dbd-0",
+        "16284512746d6f5dbd-1",
+        "16284512746d6f5dbd-2"
       ],
       "settings": {
-        "height": "adapt",
-        "color_scheme": "background-1",
-        "layout": "image_first"
+        "hero_height": "50vh",
+        "background": "#000000",
+        "opacity": 50,
+        "info_alignment": "center"
       }
     }
   },
   "order": [
-    "image_banner",
-    "image_text",
-    "featured_products"
+    "1628451142ba22e7a3",
+    "1628451172c00fbb03",
+    "162845116200ef6b93",
+    "1628451179281ffef6",
+    "featured_products",
+    "16284512103cad8520",
+    "1628451261173d995f",
+    "16284512746d6f5dbd"
   ]
 }
