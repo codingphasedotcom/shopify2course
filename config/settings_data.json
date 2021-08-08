@@ -3,26 +3,16 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "50% OFF For July 4th",
-              "link": "shopify:\/\/collections\/adidas"
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
         }
       },
       "header": {
         "type": "header",
         "settings": {
+          "header_type": "header1",
           "logo_width": 100,
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "menu_two": "main-menu"
         }
       },
       "footer": {
@@ -40,9 +30,11 @@
           "footer-0"
         ],
         "settings": {
+          "footer_p": "I ' m baby viral XOXO jean shorts bushwick lyft. Pour-over man braid distillery, vegan vice meditation brunch cronut. Hella 3 wolf moon kogi, man braid quinoa tumeric umami meggings. Butcher church-key cray, synth vice listicle master cleanse tote bag disrupt semiotics chillwave typewriter post-ironic.",
           "newsletter_enable": true,
           "newsletter_heading": "Sign up to our emails",
-          "show_social": false
+          "show_social": false,
+          "footer_bottom_menu": ""
         }
       }
     },
