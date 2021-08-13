@@ -32,7 +32,7 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
-
+    
     {% style %}
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
@@ -97,7 +97,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,300;0,500;0,700;1,400&display=swap" rel="stylesheet"/>
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'vendors.css' | asset_url | stylesheet_tag }}
+
+    <style>
+    :root {
+      --body-bg: {{ settings.body_bg }};
+      --announce-bar-default: #605e7d;
+    }
+    body {
+      background-color: var(--body-bg);
+    }
+    a:hover {
+      color: #f84c4c;
+    }
+    .fixed-nav.transparent-nav .header {
+      background: transparent;
+    }
+    .fixed-nav.transparent-nav .header a {
+      color: #fff;
+    }
+    .fixed-nav.transparent-nav
+      .header
+      .header1__collection-link
+      .collection-link__sub-links
+      a,
+    .fixed-nav.transparent-nav
+      .header
+      .header2__collection-link
+      .collection-link__sub-links
+      a,
+    .fixed-nav.transparent-nav
+      .header
+      .header3__collection-link
+      .collection-link__sub-links
+      a {
+      color: #000;
+    }
+    .fixed-nav.transparent-nav
+      .header
+      .header1__collection-link
+      .collection-link__sub-links
+      a:hover,
+    .fixed-nav.transparent-nav
+      .header
+      .header2__collection-link
+      .collection-link__sub-links
+      a:hover,
+    .fixed-nav.transparent-nav
+      .header
+      .header3__collection-link
+      .collection-link__sub-links
+      a:hover {
+      color: red;
+    }
+    .fixed-nav .header {
+      position: fixed;
+      width: 100%;
+      z-index: 20;
+    }
+    
+
+  </style>
+    {% comment %} {{ 'styles.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -109,7 +170,7 @@
     <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
   </head>
 
-  <body class="fixed-nav transparent-nav">
+  <body class="fixed-nav transparent-nav" style="background: var(--body-bg)">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -120,6 +181,7 @@
     <main>
       {{ content_for_layout }}
     </main>
+    
 
     {% section 'footer' %}
 

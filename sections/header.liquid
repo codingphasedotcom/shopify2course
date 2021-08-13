@@ -1,5 +1,6 @@
 {% case section.settings.header_type %}
 {% when 'header1' %}
+  {{ 'Header1.css' | asset_url | stylesheet_tag }}
 <!-- STARTING HEADER 1 -->
 <header class="header header1">
 
@@ -81,6 +82,7 @@
 
 {% when 'header2' %}
 <!-- STARTING HEADER 2 -->
+{{ 'Header2.css' | asset_url | stylesheet_tag }}
 <header class="header header2">
   <div class="header2__logo">
     <a href="{{ routes.root_url }}">
@@ -140,6 +142,7 @@
 
 {% when 'header3' %}
 <!-- STARTING HEADER 3 -->
+{{ 'Header3.css' | asset_url | stylesheet_tag }}
 <header class="header header3">
   <div class="header3__logo">
     <a href="{{ routes.root_url }}">

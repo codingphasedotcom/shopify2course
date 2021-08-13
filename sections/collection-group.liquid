@@ -1,3 +1,4 @@
+{{ 'Collection1.css' | asset_url | stylesheet_tag }}
 <div class="collection collection1">
 	<div class="container">
 		<div class="row">
@@ -40,6 +41,7 @@
 							<span class="collection1__product-price">
 								${{ product.price }}
 							</span>
+							
 							{%- endif -%}
 						</div>
 
