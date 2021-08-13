@@ -415,6 +415,7 @@
 </section>
 
 {% javascript %}
+console.log('{{ product.title | escape }}')
   class ProductModal extends ModalDialog {
     constructor() {
       super();
