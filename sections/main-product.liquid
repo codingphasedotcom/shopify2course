@@ -413,9 +413,11 @@
     </modal-dialog>
   {%- endfor -%}
 </section>
-
-{% javascript %}
+<script>
 console.log('{{ product.title | escape }}')
+</script>
+{% javascript %}
+
   class ProductModal extends ModalDialog {
     constructor() {
       super();
