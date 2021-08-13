@@ -93,7 +93,7 @@
     "1628451179281ffef6": {
       "type": "collection-products-1",
       "settings": {
-        "collection": "",
+        "collection": "adidas",
         "total_products": 16,
         "container_shape": "rectangle",
         "image_fit": "cover",
