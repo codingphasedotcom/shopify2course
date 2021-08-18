@@ -6,6 +6,15 @@
 {{ 'component-rte.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+<script>
+  console.log('testing')
+  // console.log(product.title)
+  const productVariants = JSON.parse('{{ product.variants | json }}')
+  console.log(productVariants)
+  
+</script>
+
+
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -454,7 +463,7 @@
   <script type="application/json" id="ProductJSON-{{ product.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
-
+  
   <script src="{{ 'product-model.js' | asset_url }}" defer></script>
 {%- endif -%}
 
